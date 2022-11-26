@@ -19,8 +19,9 @@ export const ForbesList = ({ list }) => {
       </BoardHeader>
 
       <LeaderBoardProfiles>
-        {list.map(({ avatar, name, capital, isIncrease }) => (
+        {list.map(({ id, avatar, name, capital, isIncrease }) => (
           <ForbesListItem
+            key={id}
             avatar={avatar}
             name={name}
             capital={capital}

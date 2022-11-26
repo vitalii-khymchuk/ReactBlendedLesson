@@ -18,7 +18,12 @@ export const Statistics = ({ title, stats }) => {
       {title && <StatisticTitle>{title}</StatisticTitle>}
       <StatisticsList>
         {stats.map(({ id, title, total }) => (
-          <StatisticItem key={id} title={title} total={total} icons={icons} />
+          <StatisticItem
+            key={id}
+            title={title}
+            total={total}
+            icon={icons[title]}
+          />
         ))}
       </StatisticsList>
     </>
@@ -26,7 +31,7 @@ export const Statistics = ({ title, stats }) => {
 };
 
 Statistics.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   stats: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,

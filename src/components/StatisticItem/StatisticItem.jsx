@@ -5,10 +5,10 @@ import {
 } from './StatisticItem.styled';
 import PropTypes from 'prop-types';
 
-export const StatisticItem = ({ title, total, icons }) => {
+export const StatisticItem = ({ title, total, icon }) => {
   return (
     <StatisticBox>
-      {icons[title]}
+      {icon}
       <StatisticCounter>{total}</StatisticCounter>
       <StatisticText>{title}</StatisticText>
     </StatisticBox>
@@ -18,4 +18,5 @@ export const StatisticItem = ({ title, total, icons }) => {
 StatisticItem.propTypes = {
   title: PropTypes.string.isRequired,
   total: PropTypes.number.isRequired,
+  icon: PropTypes.element.isRequired,
 };
